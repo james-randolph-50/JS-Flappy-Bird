@@ -3,7 +3,7 @@
 var cvs = document.getElementById('canvas');
 var ctx = cvs.getContext('2d');
 
-// Load Image
+// Load Images
 
 var bird = new Image();
 var bg = new Image();
@@ -17,27 +17,14 @@ fg.src = "images/fg.png";
 pipeTop.src = "images/pipeTop.png";
 pipeBottom.src = "images/pipeBottom.png";
 
-var imageName = new Image();
-imageName.src = "images/img.png";
+// Draw Images
 
-// Load Sound
-var audioName = new Audio();
-audioName.src = "audio/audio.png";
+bird.onload = function draw() {
 
-// Pipes
+    ctx.drawImage(bg,0,0);
 
-var pipe = [];
+    ctx.drawImage(pipeTop, 100, 0);
+    ctx.drawImage(pipeBottom, 100, 0+constant);
+};
 
-    pipe[0] = {
-        x: cvs.width,
-        y: 0
-    };
-
-// Draw Bird
-
-ctx.drawImage(imageName, x, y, width, height);
-
-function draw() {
-    ctx.drawImage(bg, 0 , 0);
-    ctx.drawImage(pipeTop, pX, pY)
-}
+draw();
