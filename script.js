@@ -11,6 +11,20 @@ imageName.src = "images/img.png";
 var audioName = new Audio();
 audioName.src = "audio/audio.png";
 
+// Pipes
+
+var pipe = [];
+
+    pipe[0] = {
+        x: cvs.width,
+        y: 0
+    };
+
 // Draw Bird
 
 ctx.drawImage(imageName, x, y, width, height);
+
+function draw() {
+    ctx.drawImage(bg, 0 , 0);
+    ctx.drawImage(pipeTop, pX, pY)
+}
