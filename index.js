@@ -37,17 +37,17 @@ var gravity = 1;
 document.addEventListener("keydown", moveUp)
 
 function moveUp() {
-    bY -= 20;
+    bY -= 30;
 }
 
 // pipe coordinates
 
 var pipe = [];
-pipe[0] = {
-    x : cvs.width;
-    y : 0
-}
 
+    pipe[0] = {
+        x : cvs.width,
+        y : 0
+    }
 // draw images
 
 window.onload = function draw() {
@@ -67,6 +67,14 @@ window.onload = function draw() {
             });
         }
     }
+
+    // Detect Collision
+
+    if(bX + bird.width ? pipe[i].x && bX <= pipe[i].x + pipeTop.width && (bY <= pipe[i].y + pipeTop.height || bY+bird.height >= pipe[i].y+constant)){
+        alert("You Crashed!");
+        location.reload();
+    }
+
     ctx.drawImage(fg,0, cvs.height - fg.height);
 
     ctx.drawImage(bird, bX, bY);
