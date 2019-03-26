@@ -57,6 +57,15 @@ window.onload = function draw() {
     for(var i = 0; i < pipe.length; i++){
         ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
         ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y+constant);
+
+        pipe[i].x--;
+
+        if(pipe[i].x == 125){
+            pipe.push({
+                x : cvs.width,
+                y : Math.floor(Math.random()*pipeTop.height)-pipeTop.height
+            });
+        }
     }
     ctx.drawImage(fg,0, cvs.height - fg.height);
 
