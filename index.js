@@ -32,11 +32,17 @@ var bY = 150;
 
 var gravity = 1;
 
+// Pressing Keys
+
+document.addEventListener("keydown", moveUp)
+
+function moveUp() {
+    
+}
+
 // draw images
 
 window.onload = function draw() {
-    
-
 
     ctx.drawImage(bg,0,0);
 
