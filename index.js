@@ -37,7 +37,15 @@ var gravity = 1;
 document.addEventListener("keydown", moveUp)
 
 function moveUp() {
-    
+    bY -= 20;
+}
+
+// pipe coordinates
+
+var pipe = [];
+pipe[0] = {
+    x : cvs.width;
+    y : 0
 }
 
 // draw images
@@ -46,8 +54,10 @@ window.onload = function draw() {
 
     ctx.drawImage(bg,0,0);
 
-    ctx.drawImage(pipeTop, 100, 0);
-    ctx.drawImage(pipeBottom, 100, 0+constant);
+    for(var i = 0; i < pipe.length; i++){
+        ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
+        ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y+constant);
+    }
     ctx.drawImage(fg,0, cvs.height - fg.height);
 
     ctx.drawImage(bird, bX, bY);
