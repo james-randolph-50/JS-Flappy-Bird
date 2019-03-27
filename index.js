@@ -5,6 +5,19 @@ var ctx = cvs.getContext('2d');
 
 // Load Images
 
+// function preloadImage(url) {
+//     var img = new Image();
+//     img.src = url;
+// }
+
+// preloadImage(
+//     "images/pipeBottom.png",
+//     "images/pipeTop.png",
+//     "images/fg.png",
+//     "images/bg.png",
+//     "images/bird.png"
+// )
+
 var bird = new Image();
 var bg = new Image();
 var fg = new Image();
