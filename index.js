@@ -32,10 +32,10 @@ var score = 0;
 // audio files
 
 var fly = new Audio();
-var scor = new Audio();
+var score = new Audio();
 
 fly.src = "sounds/fly.mp3";
-scor.src = "sounds/score.mp3";
+score.src = "sounds/score.mp3";
 
 // on key down
 
@@ -85,7 +85,7 @@ function draw(){
         
         if(pipe[i].x == 5){
             score++;
-            scor.play();
+            score.play();
         }
         
         
